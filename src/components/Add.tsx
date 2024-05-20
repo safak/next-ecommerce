@@ -38,15 +38,17 @@ const Add = ({
         <div className="flex items-center gap-4">
           <div className="bg-gray-100 py-2 px-4 rounded-3xl flex items-center justify-between w-32">
             <button
-              className="cursor-pointer text-xl"
+              className="cursor-pointer text-xl disabled:cursor-not-allowed disabled:opacity-20"
               onClick={() => handleQuantity("d")}
+              disabled={quantity===1}
             >
               -
             </button>
             {quantity}
             <button
-              className="cursor-pointer text-xl"
+              className="cursor-pointer text-xl disabled:cursor-not-allowed disabled:opacity-20"
               onClick={() => handleQuantity("i")}
+              disabled={quantity===stockNumber}
             >
               +
             </button>
