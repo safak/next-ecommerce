@@ -14,10 +14,9 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
     return notFound();
   }
 
-  console.log(order);
-
   return (
     <div className="flex flex-col h-[calc(100vh-180px)] items-center justify-center ">
+      <div className="shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] px-40 py-20">
       <h1 className="text-xl">Order Details</h1>
       <div className="mt-12 flex flex-col gap-6">
         <div className="">
@@ -54,6 +53,7 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
             {order.billingInfo?.address?.city}
           </span>
         </div>
+      </div>
       </div>
       <Link href="/" className="underline mt-6">
         Have a problem? Contact us
