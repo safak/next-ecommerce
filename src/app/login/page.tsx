@@ -2,7 +2,7 @@
 
 import { useWixClient } from "@/hooks/useWixClient";
 import { LoginState } from "@wix/sdk";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { useState } from "react";
 
@@ -32,8 +32,6 @@ const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
-
-  const pathName = usePathname();
 
   const formTitle =
     mode === MODE.LOGIN
@@ -78,7 +76,7 @@ const LoginPage = () => {
         case MODE.RESET_PASSWORD:
           response = await wixClient.auth.sendPasswordResetEmail(
             email,
-            pathName
+            window.location.href
           );
           setMessage("Password reset email sent. Please check your e-mail.");
           break;
@@ -97,8 +95,6 @@ const LoginPage = () => {
           const tokens = await wixClient.auth.getMemberTokensForDirectLogin(
             response.data.sessionToken!
           );
-
-          console.log(tokens);
 
           Cookies.set("refreshToken", JSON.stringify(tokens.refreshToken), {
             expires: 2,
