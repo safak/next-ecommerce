@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-height {
+  height: calc(100vh - 80px);
+}
+
+.custom-shadow {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  ;
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
+.scrollbar-hide{
+  scrollbar-width: none;
+}
