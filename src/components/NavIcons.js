@@ -13,7 +13,7 @@ const NaveIcons = () => {
 
   const router = useRouter();
 
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   // function that handle if the user is loggedin or not
   const handleProfile = () => {
@@ -40,7 +40,7 @@ const NaveIcons = () => {
         onClick={handleProfile}
       />
       {isProfileOpen && (
-        <div className="absolute p-4 rounded-lg top-12 -left-10 text-md shadow-custom z-20">
+        <div className="absolute p-4 rounded-lg top-12 -left-10 bg-[#FBFBFB] text-md shadow-custom z-[1000]">
           <Link href="/">Profile</Link>
           <div className="mt-2 cursor-pointer">Logout</div>
         </div>

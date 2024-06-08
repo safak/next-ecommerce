@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="w-1/3 xl:w-1/2 flex items-center gap-16">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="paddy logo icon"
               width={50}
               height={50}

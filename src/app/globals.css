@@ -5,3 +5,29 @@
 body {
   background: #fbfbfb;
 }
+
+/* Apply scrollbar styling to the entire document */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #545454 #303030; /* For Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* Width of the vertical scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #545454; /* Color of the scrollbar thumb */
+  border-radius: 50px; /* Roundness of the scrollbar thumb */
+}
+
+body::-webkit-scrollbar-track {
+  background: #303030; /* Color of the scrollbar track */
+}
+
+/* Optional: Add hover effects for better UX */
+body::-webkit-scrollbar-thumb:hover {
+  background: #707070; /* Change thumb color on hover */
+}
