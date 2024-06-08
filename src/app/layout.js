@@ -1,19 +1,19 @@
-import { Inter } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const cinzel = Cinzel({ weight: "500", subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lama Dev E-Commerce Application",
+  title: "Paddy E-Commerce ",
   description: "A complete e-commerce application with Next.js and Wix",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cinzel.className}>
         <Navbar />
         {children}
         <Footer />
