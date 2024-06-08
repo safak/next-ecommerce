@@ -4,6 +4,7 @@
 
 body {
   background: #fbfbfb;
+  text-color: #0c0c0c;
 }
 
 /* Apply scrollbar styling to the entire document */
@@ -30,4 +31,13 @@ body::-webkit-scrollbar-track {
 /* Optional: Add hover effects for better UX */
 body::-webkit-scrollbar-thumb:hover {
   background: #707070; /* Change thumb color on hover */
+}
+
+/* Hide scrollbar for the x of the category list */
+.scrollbar-hide::webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
 }
