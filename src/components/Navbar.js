@@ -6,7 +6,7 @@ import NaveIcons from "./NavIcons";
 
 const Navbar = () => {
   return (
-    <div className="h-20 px-4 md:px-4 lg:px-16 xl:32 2xl:px-64 relative">
+    <nav className="h-20 px-4 md:px-4 lg:px-16 xl:32 2xl:px-64 relative">
       {/* Mobile */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
@@ -41,7 +41,7 @@ const Navbar = () => {
           <NaveIcons />
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
