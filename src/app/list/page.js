@@ -1,8 +1,26 @@
 import Image from "next/image";
 import ProductList from "../../components/ProductList";
 import Filter from "../../components/Filter";
+import { wixClientServer } from "../../lib/wixCllientServer";
+import { Suspense } from "react";
 
-const ListPage = () => {
+const ListPage = async ({ searchParams }) => {
+  console.log(searchParams);
+
+  const wixClient = await wixClientServer();
+
+  let categoryProducts = [];
+
+  try {
+    categoryProducts = await wixClient.collections.getCollectionBySlug(
+      searchParams.category || "all-products"
+    );
+
+    console.log(categoryProducts);
+  } catch (error) {
+    return <div>Error fetching category products</div>;
+  }
+
   return (
     <div className="px-4 md:px-8 ls:px-16 xl:32 2xl:px-64 relative">
       {/* Banner section */}
@@ -31,7 +49,15 @@ const ListPage = () => {
 
       {/* Product List */}
       <h1 className="my-12 text-xl font-semibold">Just For You!</h1>
-      <ProductList />
+      <Suspense fallback={"loading"}>
+        <ProductList
+          categoryId={
+            categoryProducts?.collection?._id ||
+            "00000000-000000-000000-000000000001"
+          }
+          searchParams={searchParams}
+        />
+      </Suspense>
     </div>
   );
 };

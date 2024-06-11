@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="px-6 py-20 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-[#0c0c0c] text-[#fbfbfb] text-sm mt-24">
+    <footer className="px-6 py-20 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-[#003366] text-[#fbfbfb] text-sm mt-24">
       {/* Top */}
       <div className="flex flex-col md:flex-row justify-between gap-24">
         {/* Left */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <Link href="/">
-            <div className="text-4xl tracking-wide">Paddy</div>
+            <div className="text-4xl tracking-wide">Eleganza</div>
           </Link>
           <p>1410 Rue Parthenais, H2K 3R9, Montreal, QC, Canada</p>
           <span className="text-medium">+1-438-929-9531</span>
@@ -139,7 +139,7 @@ const Footer = () => {
       </div>
       {/* Bottom */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
-        <div className="">@ 2024 Paddy Shop</div>
+        <div className="">@ 2024 Eleganza Shop</div>
         <div className="flex flex-col gap-8 md:flex-row">
           <div className="">
             <span className="text-gray-500 mr-4">Language</span>

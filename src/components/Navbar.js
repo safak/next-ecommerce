@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Menu from "./Menu";
 import SearchBar from "./SearchBar";
 import NaveIcons from "./NavIcons";
@@ -10,7 +9,7 @@ const Navbar = () => {
       {/* Mobile */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
-          <div className="text-2xl tracking-wide">Paddy</div>
+          <div className="text-2xl tracking-wide">Eleganza</div>
         </Link>
         <Menu />
       </div>
@@ -19,13 +18,7 @@ const Navbar = () => {
         {/* Left side */}
         <div className="w-1/3 xl:w-1/2 flex items-center gap-16">
           <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="paddy logo icon"
-              width={50}
-              height={50}
-            />
-            <div className="text-2xl tracking-wide">Paddy</div>
+            <div className="text-2xl tracking-wide">Eleganza</div>
           </Link>
           <div className="hidden xl:flex gap-4">
             <Link href="/">Home</Link>
