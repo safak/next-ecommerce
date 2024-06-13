@@ -32,12 +32,14 @@ const ProductsVariants = ({ productId, variants, productOptions }) => {
 
   // Fucntion to check if the selected variant is in stock
   const isVariantInStock = (choices) => {
+    // using .some() to check if at least one variant matches the criteria
     return variants.some((variant) => {
       const variantChoices = variant.choices;
 
       if (!variantChoices) return false;
 
       return (
+        // Ensures that every key-value pair in choices matches the corresponding key-value pair in variantChoices
         Object.entries(choices).every(
           ([key, value]) => variantChoices[key] === value
         ) &&
