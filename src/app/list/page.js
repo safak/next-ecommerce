@@ -3,6 +3,7 @@ import ProductList from "../../components/ProductList";
 import Filter from "../../components/Filter";
 import { wixClientServer } from "../../lib/wixCllientServer";
 import { Suspense } from "react";
+import Pagination from "../../components/Pagination";
 
 const ListPage = async ({ searchParams }) => {
   const wixClient = await wixClientServer();
@@ -58,6 +59,8 @@ const ListPage = async ({ searchParams }) => {
           searchParams={searchParams}
         />
       </Suspense>
+
+      <Pagination />
     </div>
   );
 };

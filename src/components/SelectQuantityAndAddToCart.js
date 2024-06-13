@@ -34,11 +34,15 @@ const SelectQuantityAndAddToCart = ({ productId, variantId, stockNumber }) => {
               +
             </button>
           </div>
-          <div className="text-xs">
-            Only <span className="text-orange-500">{stockNumber} Items</span>{" "}
-            left!
-            <br /> {`Dont't`} miss it
-          </div>
+          {stockNumber > 0 ? (
+            <div className="text-xs">
+              Only <span className="text-orange-500">{stockNumber} Items</span>{" "}
+              left!
+              <br /> {`Dont't`} miss it
+            </div>
+          ) : (
+            <div className="text-sm text-gray-500">Product is out of stock</div>
+          )}
         </div>
         <button className="w-36 text-sm rounded-md ring-1 ring-[#003366] py-2 px-4 hover:bg-[#003366] hover:text-[#fbfbfb] transition-all duration-300 disabled:cursor-not-allowed disabled:bg-pink-200 disabled:text-[#fbfbfb] disabled:ring-none">
           ADD TO CART
