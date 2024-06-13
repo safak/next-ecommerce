@@ -5,8 +5,6 @@ import { wixClientServer } from "../../lib/wixCllientServer";
 import { Suspense } from "react";
 
 const ListPage = async ({ searchParams }) => {
-  console.log(searchParams);
-
   const wixClient = await wixClientServer();
 
   let categoryProducts = [];
@@ -15,8 +13,6 @@ const ListPage = async ({ searchParams }) => {
     categoryProducts = await wixClient.collections.getCollectionBySlug(
       searchParams.category || "all-products"
     );
-
-    console.log(categoryProducts);
   } catch (error) {
     return <div>Error fetching category products</div>;
   }
@@ -24,6 +20,7 @@ const ListPage = async ({ searchParams }) => {
   return (
     <div className="px-4 md:px-8 ls:px-16 xl:32 2xl:px-64 relative">
       {/* Banner section */}
+
       <div className="px-4 mt-8 flex justify-between h-64 bg-[#ffe9e9] rounded-lg">
         <div className="w-2/3 flex flex-col items-center justify-center gap-8">
           <h1 className="text-lg sm:text-4xl font-semibold sm:leading-[48px] text-gray-700">
@@ -44,10 +41,13 @@ const ListPage = async ({ searchParams }) => {
           />
         </div>
       </div>
+
       {/* Filter section */}
+
       <Filter />
 
       {/* Product List */}
+
       <h1 className="my-12 text-xl font-semibold">Just For You!</h1>
       <Suspense fallback={"loading"}>
         <ProductList

@@ -26,7 +26,7 @@ const ProductList = async ({ categoryId, limit, searchParams }) => {
         return (
           <Link
             key={product._id}
-            href={"/" + product.slug}
+            href={"/list/" + product.slug}
             className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
           >
             <div className="relative w-full h-80">
@@ -39,7 +39,7 @@ const ProductList = async ({ categoryId, limit, searchParams }) => {
               />
               {product.media?.items && (
                 <Image
-                  src={product.media?.items[1]?.image.url || "/product.png"}
+                  src={product.media.items[1]?.image.url || "/product.png"}
                   alt="product image"
                   fill
                   sizes="25vw"
@@ -63,7 +63,7 @@ const ProductList = async ({ categoryId, limit, searchParams }) => {
                 }}
               ></div>
             )}
-            <button className="rounded-md bg-[#0c0c0c] text-[#fbfbfb] py-2 px-4 hover:bg-[#fbfbfb] hover:text-[#0c0c0c] transition-all ease-in-out duration-700 hover:border-[#0c0c0c] hover:border">
+            <button className="rounded-md bg-[#003366] text-[#fbfbfb] py-2 px-4 hover:bg-[#fbfbfb] hover:text-[#0c0c0c] transition-all ease-in-out duration-700 hover:border-[#0c0c0c] hover:border">
               ADD TO CART
             </button>
           </Link>
