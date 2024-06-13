@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import { wixClientServer } from "../../../lib/wixCllientServer";
 import ProductImages from "../../../components/ProductImages";
-import CustomizeProducts from "../../../components/CustomizeProducts";
-import Add from "../../../components/Add";
+import ProductsVariants from "../../../components/ProductsVariants";
+import SelectQuantityAndAddToCart from "../../../components/SelectQuantityAndAddToCart";
 
 const ProductPage = async ({ params }) => {
   const wixClient = await wixClientServer();
@@ -53,19 +53,19 @@ const ProductPage = async ({ params }) => {
         )}
 
         <div className="h-[2px] bg-gray-100" />
-        {product.items[0]?.variants && product.items[0]?.productOptions && (
-          <CustomizeProducts
+        {product.items[0]?.variants && product.items[0]?.productOptions ? (
+          <ProductsVariants
             productId={product.items[0]._id}
             variants={product.items[0].variants}
             productOptions={product.items[0].productOptions}
           />
+        ) : (
+          <SelectQuantityAndAddToCart
+            productId={product.items[0]._id}
+            variantId="00000000-0000-0000-0000-000000000000"
+            stockNumber={product.items[0].stock?.quantity || 0}
+          />
         )}
-
-        <Add
-          productId={product.items[0]._id}
-          variantId=""
-          stockNumber={product.items[0].stock?.quantity || 0}
-        />
 
         <div className="h-[2px] bg-gray-100" />
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const Add = ({ productId, variantId, stockNumber }) => {
+const SelectQuantityAndAddToCart = ({ productId, variantId, stockNumber }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantity = (type) => {
@@ -48,4 +48,4 @@ const Add = ({ productId, variantId, stockNumber }) => {
   );
 };
 
-export default Add;
+export default SelectQuantityAndAddToCart;
