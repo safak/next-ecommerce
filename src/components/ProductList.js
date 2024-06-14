@@ -2,8 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { wixClientServer } from "../lib/wixCllientServer";
 import DOMPurify from "isomorphic-dompurify";
+import Pagination from "./Pagination";
 
-const PRODUCT_PER_PAGE = 20;
+const PRODUCT_PER_PAGE = 8;
 
 const ProductList = async ({ categoryId, limit, searchParams }) => {
   const wixClient = await wixClientServer();
@@ -11,17 +12,46 @@ const ProductList = async ({ categoryId, limit, searchParams }) => {
   let products = [];
 
   try {
-    products = await wixClient.products
+    const productsQuery = wixClient.products
       .queryProducts()
+      .startsWith("name", searchParams?.product || "")
       .eq("collectionIds", categoryId)
+      .hasSome(
+        "productType",
+        searchParams?.type ? [searchParams.type] : ["physical", "digital"]
+      )
+      .gt("priceData.price", parseFloat(searchParams?.min) || 0)
+      .lt("priceData.price", parseFloat(searchParams?.max) || 9999)
       .limit(limit || PRODUCT_PER_PAGE)
-      .find();
+      .skip(
+        searchParams?.page
+          ? parseInt(searchParams.page) * (limit || PRODUCT_PER_PAGE)
+          : 0
+      );
+
+    if (searchParams?.sort) {
+      const [sortType, sortBy] = searchParams.sort.split(" ");
+
+      console.log(`Sort Type: ${sortType}, Sort By: ${sortBy}`);
+
+      if (sortType === "asc") {
+        productsQuery.ascending(sortBy);
+      }
+
+      if (sortType === "desc") {
+        productsQuery.descending(sortBy);
+      }
+    }
+
+    products = await productsQuery.find();
+
+    //console.log("Fetched products:", products);
   } catch (error) {
     return <div>Error fetching products</div>;
   }
 
   return (
-    <div className="flex gap-x-8 gap-y-16 justify-between flex-wrap">
+    <div className="flex gap-x-8 gap-y-16 flex-wrap">
       {products?.items?.map((product) => {
         return (
           <Link
@@ -69,6 +99,13 @@ const ProductList = async ({ categoryId, limit, searchParams }) => {
           </Link>
         );
       })}
+      {searchParams?.category || searchParams?.name ? (
+        <Pagination
+          currentPage={products.currentPage || 0}
+          hasPrev={products.hasPrev()}
+          hasNext={products.hasNext()}
+        />
+      ) : null}
     </div>
   );
 };

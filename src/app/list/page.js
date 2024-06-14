@@ -3,7 +3,6 @@ import ProductList from "../../components/ProductList";
 import Filter from "../../components/Filter";
 import { wixClientServer } from "../../lib/wixCllientServer";
 import { Suspense } from "react";
-import Pagination from "../../components/Pagination";
 
 const ListPage = async ({ searchParams }) => {
   const wixClient = await wixClientServer();
@@ -35,9 +34,10 @@ const ListPage = async ({ searchParams }) => {
         </div>
         <div className="relative w-1/3">
           <Image
-            src="/woman.png"
+            src="/shoes.png"
             alt="list page banner image"
             fill
+            sizes="100vw"
             className="object-contain"
           />
         </div>
@@ -49,7 +49,9 @@ const ListPage = async ({ searchParams }) => {
 
       {/* Product List */}
 
-      <h1 className="my-12 text-xl font-semibold">Just For You!</h1>
+      <h1 className="my-12 text-xl font-semibold">
+        {categoryProducts?.collection?.name} For You!
+      </h1>
       <Suspense fallback={"loading"}>
         <ProductList
           categoryId={
@@ -59,8 +61,6 @@ const ListPage = async ({ searchParams }) => {
           searchParams={searchParams}
         />
       </Suspense>
-
-      <Pagination />
     </div>
   );
 };

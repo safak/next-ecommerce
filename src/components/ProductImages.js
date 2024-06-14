@@ -22,7 +22,7 @@ const ProductImages = ({ images }) => {
           return (
             <div
               key={image._id}
-              className="w-1/4 h-40 gap-4 mt-6 relative"
+              className="w-1/4 h-32 gap-4 mt-6 relative"
               onClick={() => setImageIndex(index)}
             >
               <Image
