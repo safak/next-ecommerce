@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="py-24 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 bg-gray-100 text-sm mt-24">
+    <div className="py-10 px-4 md:px-6 lg:px-8 xl:px-30 2xl:px-40 bg-gray-200 text-sm mt-24">
       {/* TOP */}
       <div className="flex flex-col md:flex-row justify-between gap-24">
         {/* LEFT */}
         <div className="w-full md:w-1/2 lg:w-1/4 flex flex-col gap-8">
           <Link href="/">
-            <div className="text-2xl tracking-wide">NASI</div>
+            <div className="text-2xl font-extrabold tracking-wide">NASI</div>
           </Link>
           <p>
             3252 Winding Way, Central Plaza, Willowbrook, CA 90210, United
@@ -69,9 +69,9 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Email address"
-              className="p-4 w-3/4"
+              className="p-4 w-3/4 h-11 rounded-l-lg"
             />
-            <button className="w-1/4 bg-lama text-white">JOIN</button>
+            <button className="w-1/4 h-11 rounded-r-lg bg-pink-500 text-white">JOIN</button>
           </div>
           <span className="font-semibold">Secure Payments</span>
           <div className="flex justify-between">

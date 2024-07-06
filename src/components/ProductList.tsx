@@ -54,23 +54,23 @@ const ProductList = async ({
       {res.items.map((product: products.Product) => (
         <Link
           href={"/" + product.slug}
-          className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
+          className="w-full flex flex-col gap-4 h-80 sm:w-[40%] lg:w-[20%]"
           key={product._id}
         >
           <div className="relative w-full h-80">
             <Image
               src={product.media?.mainMedia?.image?.url || "/product.png"}
-              alt=""
+              alt="product"
               fill
-              sizes="25vw"
+              sizes="20vw"
               className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
             />
             {product.media?.items && (
               <Image
                 src={product.media?.items[1]?.image?.url || "/product.png"}
-                alt=""
+                alt="product"
                 fill
-                sizes="25vw"
+                sizes="20vw"
                 className="absolute object-cover rounded-md"
               />
             )}
@@ -91,7 +91,7 @@ const ProductList = async ({
               }}
             ></div>
           )}
-          <button className="rounded-2xl ring-1 ring-lama text-lama w-max py-2 px-4 text-xs hover:bg-lama hover:text-white">
+          <button className="rounded-2xl ring-1 ring-pink-500 text-pink-500 w-max py-2 px-4 text-xs hover:bg-pink-500 hover:text-white">
             Add to Cart
           </button>
         </Link>
