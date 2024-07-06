@@ -1,7 +1,11 @@
 "use client";
+
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import Confetti from "react-confetti";
+
+// Fallback UI component
+const Loading = () => <div>Loading...</div>;
 
 const SuccessPage = () => {
   const searchParams = useSearchParams();
@@ -33,4 +37,13 @@ const SuccessPage = () => {
   );
 };
 
-export default SuccessPage;
+// Wrap the SuccessPage component with Suspense
+const SuspenseWrapper = () => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <SuccessPage />
+    </Suspense>
+  );
+};
+
+export default SuspenseWrapper;
