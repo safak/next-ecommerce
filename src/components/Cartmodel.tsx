@@ -76,9 +76,9 @@ const Cartmodel = () => {
     <p className="text-gray-500 text-sm mt-2 mb-4">
         Shipping and taxes calculated at checkout.
     </p>
-    <div className="flex justify-between text-sm">
-        <button className="rounded-md py-3 px-4 ring-1 ring-gray-300">View Cart</button>
-        <button className="rounded-md py-3 px-4  bg-black text-white">Checkout</button>
+    <div className="flex justify-between text-sm gap-4">
+        <button className="btn">View Cart</button>
+        <button className="btn-secondary">Checkout</button>
     </div>
        </div>
        </>

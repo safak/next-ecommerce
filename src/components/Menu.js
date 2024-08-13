@@ -58,9 +58,9 @@ const Menu = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center   ">
       <div
-        className='cursor-pointer text-2xl text-black z-20 fixed top-4 right-4 '
+        className='cursor-pointer text-2xl text-gray-700 z-30 fixed top-7 right-4 '
         onClick={toggleMenu}
       >
         {open ? <FaTimes /> : <FaBars />}
