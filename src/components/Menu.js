@@ -58,9 +58,9 @@ const Menu = () => {
   };
 
   return (
-    <div className="flex justify-center   ">
+    <div className="flex justify-center">
       <div
-        className='cursor-pointer text-2xl text-gray-700 z-30 fixed top-7 right-4 '
+        className='cursor-pointer text-2xl text-gray-700 z-50 fixed top-7 right-4'
         onClick={toggleMenu}
       >
         {open ? <FaTimes /> : <FaBars />}
@@ -73,14 +73,14 @@ const Menu = () => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed inset-0 bg-black bg-opacity-80 text-white p-10 origin-top flex flex-col justify-center items-center z-10"
+            className="fixed inset-0 bg-black bg-opacity-80 text-white p-10 origin-top flex flex-col justify-center items-center z-40"
           >
             <motion.div
               variants={containerVars}
               initial="initial"
               animate="open"
               exit="initial"
-              className="absolute bg-black text-white left-0 top-20 w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-8 text-xl z-10"
+              className="absolute bg-black text-white left-0 top-20 w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-8 text-xl z-30"
             >
               {navLinks.map((link, index) => (
                 <div key={index} className="overflow-hidden">

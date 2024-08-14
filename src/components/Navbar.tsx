@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+
 import { SlideTabsExample } from "./SlideTabs";
 import Link from "next/link";
 
@@ -22,7 +22,7 @@ const Navbar = () => {
       
       </div>
       {/* Desktop */}
-      <div className="hidden md:flex items-center justify-between gap-8 h-full ">
+      <div className="hidden md:flex items-center justify-between gap-12 h-full">
         {/* Left */}
         <div className="w-1/3 xl:w-1/2 flex items-center gap-12">
           <Link href="/" className="flex items-center gap-2">
