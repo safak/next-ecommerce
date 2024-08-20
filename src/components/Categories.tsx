@@ -48,7 +48,7 @@ const CategoryList = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Handle scrolling and updating active index
-  const handleScroll = (e) => {
+  const handleScroll = (e: any) => {
     const scrollLeft = e.target.scrollLeft;
     const width = e.target.offsetWidth;
     const index = Math.round(scrollLeft / width);
@@ -57,6 +57,12 @@ const CategoryList = () => {
 
   return (
     <div className="mt-12 px-4 overflow-x-hidden">
+     <div className="text-center mb-10 max-w-[600px] mx-auto">
+        <p className="text-sm text-lama" data-aos="fade-down">Discover our various categories</p>
+        <h1 className="text-3xl font-bold" data-aos="fade-down">Category</h1>
+        
+      </div>
+    <div className=" grid gap-8 gap-y-16 sm:grid-cols-1 lg:grid-cols-4"></div>
       <div
         className="flex gap-4 md:gap-8 overflow-x-auto scrollbar-hide snap-x"
         onScroll={handleScroll}
@@ -66,6 +72,8 @@ const CategoryList = () => {
             key={category.id}
             href={`/list?cat=${category.name.toLowerCase()}`}
             className="snap-start flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+            data-aos="fade-right"
+            data-aos-delay={category.id -1*100}
           >
             <div className="relative bg-slate-100 w-full h-96 overflow-hidden">
               <Image

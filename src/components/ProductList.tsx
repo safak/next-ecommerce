@@ -47,14 +47,25 @@ const data = [
   },
 ];
 
-const ProductList = () => {
-  return (
-    <div className="mt-12 grid gap-8 gap-y-16 sm:grid-cols-1 lg:grid-cols-4">
-      {data.map((product) => (
+const ProductList = ({title, description,semititle}:{title:string,description:string,semititle:string}) => {
+  return (<div className="mt-12">
+ <div className="text-center mb-10 max-w-[600px] mx-auto">
+        <p className="text-sm text-lama" data-aos="fade-down">{semititle}</p>
+        <h1 className="text-3xl font-bold" data-aos="fade-down">{title}</h1>
+        <p className="text-xs text-gray-400" data-aos="fade-down">
+          {description}
+        </p>
+      </div>
+    <div className=" grid gap-8 gap-y-16 sm:grid-cols-1 lg:grid-cols-4">
+      
+     
+       {data.map((product) => (
         <Link
           key={product.id}
           href={"/"}
           className="flex flex-col gap-4 w-full"
+          data-aos="fade-up"
+          data-aos-delay={product.id -1*100}
         >
           <div className="relative w-full h-80">
             <Image
@@ -84,7 +95,10 @@ const ProductList = () => {
           </div>
         </Link>
       ))}
+     </div>
     </div>
+
+    
   );
 };
 
