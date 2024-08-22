@@ -6,6 +6,8 @@ import Features from"@/components/Features";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import { useEffect } from "react";
+import SaleProductList from "@/components/SaleProdcutList";
+
 const HomePage = () => {
   useEffect(() => {
     AOS.init({
@@ -22,6 +24,9 @@ const HomePage = () => {
       <Features/>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64">
         <ProductList title={"Top Products"} description={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum odiomodi"} semititle={"Top Selling Products"} />
+      </div>
+      <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 bg-[#fdced5] py-2">
+        <SaleProductList title={"Our weekly discount"} description={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum odiomodi"} />
       </div>
       <div className="mt-24">
         <CategoryList />
