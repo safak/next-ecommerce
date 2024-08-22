@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+    font-family: "Inter", sans-serif;
+  }
+  .overflow-x-scroll {
+    overflow-x: auto;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  @layer utilities {
+    .btn {
+        @apply h-12 flex items-center justify-center uppercase font-semibold px-8 border border-black hover:bg-black hover:text-white transition duration-500 ease-in-out  !important;
+      }
+      .btn-secondary {
+        @apply h-12 flex items-center justify-center uppercase font-semibold px-8 border border-black bg-black text-white hover:bg-white hover:text-black transition duration-500 ease-in-out !important;
+      }
+  }
