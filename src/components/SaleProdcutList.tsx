@@ -46,7 +46,7 @@ const SaleProductList = ({title, description}:{title:string,description:string})
   return (<div className="mt-12">
  <div className="text-center mb-10 max-w-[600px] mx-auto">
         <h1 className="text-3xl font-bold" data-aos="fade-down">{title}</h1>
-        <p className="text-xs text-gray-400" data-aos="fade-down">
+        <p className="text-xs text-white" data-aos="fade-down">
           {description}
         </p>
       </div>
