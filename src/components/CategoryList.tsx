@@ -18,7 +18,7 @@ const CategoryList = async () => {
           >
             <div className="relative bg-slate-100 w-full h-96">
               <Image
-                src={item.media?.mainMedia?.image?.url || "cat.png"}
+                src={item.media?.mainMedia?.image?.url || "/category.png"}
                 alt=""
                 fill
                 sizes="20vw"
