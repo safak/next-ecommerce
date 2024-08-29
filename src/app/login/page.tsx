@@ -144,6 +144,7 @@ const LoginPage = () => {
               className="ring-2 ring-gray-300 rounded-md p-4"
               onChange={(e) => setUsername(e.target.value)}
             />
+            
           </div>
         ) : null}
         {mode !== MODE.EMAIL_VERIFICATION ? (
