@@ -30,7 +30,7 @@ export default function Header() {
           <span className="sr-only">Acme Inc</span>
         </Link>
         <Link
-          href="#"
+          href="/dashboard"
           className="text-foreground transition-colors hover:text-foreground"
         >
           Dashboard

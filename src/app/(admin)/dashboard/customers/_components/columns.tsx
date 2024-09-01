@@ -9,9 +9,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ColumnDef } from "@tanstack/react-table";
- import {Customers} from "@/types/Customers";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Customers } from "@prisma/client";
 
 export const columns: ColumnDef<Customers>[] = [
     {

@@ -36,26 +36,9 @@ import {
   TableRow,
 } from "@/components/ui/table";;
 import { columns } from "./columns";
-import { Customers } from "@/types/Customers";
+import { Customers } from "@prisma/client";
 
-const data: Customers[] = [
-  {
-    id: "1",
-    name: "John Doe",
-    email: "john.doe@example.com"
-  },
-  {
-    id: "2",
-    name: "Jane Smith",
-    email: "jane.smith@example.com"
-  },
-  {
-    id: "3",
-    name: "Alice Johnson",
-    email: "alice.johnson@example.com"
-  }
-];
-export default function ProductsTable() {
+export default function ProductsTable({data}:{data:Customers[]}) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

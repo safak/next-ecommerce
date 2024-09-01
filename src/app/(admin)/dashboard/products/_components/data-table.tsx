@@ -13,17 +13,13 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import {  ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -35,34 +31,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Products } from "@/types/products";
 import { columns } from "./columns";
+import { Products } from "@prisma/client";
 
-const data: Products[] = [
-  {
-    id: "1",
-    image: "https://example.com/image1.jpg",
-    name: "Sample Product 1",
-    description: "This is the first sample product description.",
-    price: 19.99,
-  },
-  {
-    id: "2",
-    image: "https://example.com/image2.jpg",
-    name: "Sample Product 2",
-    description: "This is the second sample product description.",
-    price: 29.99,
-  },
-  {
-    id: "3",
-    image: "https://example.com/image3.jpg",
-    name: "Sample Product 3",
-    description: "This is the third sample product description.",
-    price: 39.99,
-  },
-];
 
-export default function ProductsTable() {
+export default function ProductsTable({data}:{data:Products[]}) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

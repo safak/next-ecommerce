@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ColumnDef } from "@tanstack/react-table";
- import {Orders} from "@/types/orders";
+import { Orders } from "@prisma/client";
 import { Button } from "@/components/ui/button";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
 
@@ -46,7 +46,11 @@ export const columns: ColumnDef<Orders>[] = [
     {
       accessorKey: "image",
       header: "Image",
-      cell: ({ row }) => <div className="lowercase">{row.getValue("image")}</div>,
+      cell: ({ row }) => (
+        <div className="lowercase">
+          <img src={row.getValue("image")} alt="Product Image" style={{ width: '50px', height: '50px' }} />
+        </div>
+      ),
     },
     {
         accessorKey: "name",
@@ -102,13 +106,6 @@ export const columns: ColumnDef<Orders>[] = [
       header: "Base",
       cell: ({ row }) => (
         <div className="capitalize">{row.getValue("base")}</div>
-      ),
-    },
-    {
-      accessorKey: "image",
-      header: "Image",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("image")}</div>
       ),
     },
     {

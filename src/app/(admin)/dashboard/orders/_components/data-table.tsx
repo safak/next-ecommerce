@@ -13,17 +13,13 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import {  ChevronDown} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
@@ -36,51 +32,9 @@ import {
   TableRow,
 } from "@/components/ui/table";;
 import { columns } from "./columns";
-import { Orders } from "@/types/orders";
+import { Orders } from "@prisma/client";
 
-const data: Orders[] = [
-  {
-    id: "101",
-    name: "Order One",
-    date: "2023-10-01",
-    product: "Sample Product 1",
-    type: "Type A",
-    size: "Medium",
-    qty: 2,
-    metalBar: true,
-    base: "Wood",
-    image: "https://example.com/order1.jpg",
-    status: "Pending"
-  },
-  {
-    id: "102",
-    name: "Order Two",
-    date: "2023-10-02",
-    product: "Sample Product 2",
-    type: "Type B",
-    size: "Large",
-    qty: 1,
-    metalBar: false,
-    base: "Metal",
-    image: "https://example.com/order2.jpg",
-    status: "Shipped"
-  },
-  {
-    id: "103",
-    name: "Order Three",
-    date: "2023-10-03",
-    product: "Sample Product 3",
-    type: "Type C",
-    size: "Small",
-    qty: 5,
-    metalBar: true,
-    base: "Plastic",
-    image: "https://example.com/order3.jpg",
-    status: "Delivered"
-  }
-];
-
-export default function ProductsTable() {
+export default function ProductsTable({ data }: {data : Orders[]}) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
