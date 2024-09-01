@@ -1,7 +1,10 @@
 import React from 'react'
+import ProductsTable from './_components/data-table'
 
 export default function page() {
   return (
-    <div>97ab zebi</div>
+    <main className="px-5">
+      <ProductsTable />
+    </main>
   )
 }
