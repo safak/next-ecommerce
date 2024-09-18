@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold uppercase;
+  }
+
+  .h1 {
+    @apply text-white text-7xl lg:text-[112px] tracking-[-3px];
+  }
+
+  .h2 {
+    @apply text-[36px];
+  }
+
+  .h3 {
+    @apply text-[32px];
+  }
+
+  .h4 {
+    @apply text-[26px];
+  }
+
+  .h5 {
+    @apply text-[22px];
+  }
+}
+
+.bg-accent {
+  --tw-bg-opacity: 1;
+  background-color: rgb(212 0 13 / var(--tw-bg-opacity)) /* #d4000d */;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
