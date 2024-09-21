@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';
 import CartModal from "./CartModal";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +12,7 @@ const NavIcons = () => {
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [user, setUser] = useState({ token: '' });
+    const router = useRouter();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -39,6 +41,8 @@ const NavIcons = () => {
                 toast.success('Logout Successful');
                 localStorage.removeItem('token');
                 setUser({ token: '' });
+                setIsProfileOpen(false);
+                router.push('/');
             } else {
                 toast.error(data.message || 'Logout failed');
             }
@@ -67,7 +71,7 @@ const NavIcons = () => {
                         {
                             user.token ? (
                                 <>
-                                    <Link href="/profile" className="font-semibold">Profile</Link>
+                                    <Link href="/profile" className="font-semibold" onClick={()=> setIsProfileOpen((prev) => !prev)}>Profile</Link>
                                     <div className="mt-2 cursor-pointer font-semibold">
                                         <button  onClick={handleLogout}>
                                             Logout

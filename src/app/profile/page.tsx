@@ -103,7 +103,7 @@ const Profile = () => {
                                 viewport={{ once: false, amount: 0.3 }}
                                 onSubmit={handleSubmit}
                             >
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">First Name</label>
                                     <input
                                         type="text"
@@ -113,7 +113,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">Last Name</label>
                                     <input
                                         type="text"
@@ -123,7 +123,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">Email</label>
                                     <input
                                         type="email"
@@ -133,7 +133,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">City</label>
                                     <input
                                         type="text"
@@ -143,7 +143,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">State</label>
                                     <input
                                         type="text"
@@ -153,7 +153,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">Country</label>
                                     <input
                                         type="text"
@@ -163,7 +163,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">Pincode</label>
                                     <input
                                         type="text"
@@ -173,7 +173,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="">
+                                <div>
                                     <label className="block h5 font-medium mb-2">Contact</label>
                                     <input
                                         type="text"
@@ -183,7 +183,7 @@ const Profile = () => {
                                         className="input-box border rounded-lg p-2 w-full"
                                     />
                                 </div>
-                                <div className="md:col-span-2 input-box mx-60">
+                                <div>
                                     <label className="block h5 font-medium mb-2">Address</label>
                                     <input
                                         type="text"
@@ -196,7 +196,7 @@ const Profile = () => {
                                 <div className="mt-10 md:col-span-2 flex justify-center"> 
                                     <CustomButton
                                         text='Update' 
-                                        containerStyles='w-[196px] h-[62px] rounded-lg'
+                                        containerStyles='md:w-[186px] md:h-[55px] w-[120px] h-[40px] rounded-lg'
                                     />
                                 </div>
                             </motion.form>

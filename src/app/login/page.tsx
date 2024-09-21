@@ -119,7 +119,7 @@ const LoginPage = () => {
           <div className="w-full flex justify-center mt-9">
             <CustomButton 
               text='Login' 
-              containerStyles='w-[196px] h-[50px] rounded-lg'
+              containerStyles='md:w-[156px] md:h-[50px] w-[120px] h-[40px] rounded-lg'
             />
           </div>
 
