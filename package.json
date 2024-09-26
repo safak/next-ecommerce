@@ -13,12 +13,18 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@heroicons/react": "^2.1.5",
+    "@wix/ecom": "^1.0.742",
+    "@wix/sdk": "^1.12.14",
+    "@wix/sdk-runtime": "^0.3.19",
+    "@wix/stores": "^1.0.230",
+    "js-cookie": "^3.0.5",
     "next": "14.2.2",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@iconify/react": "^5.0.2",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
