@@ -1,7 +1,6 @@
-import { createClient, OAuthStrategy } from "@wix/sdk";
+ import { createClient, OAuthStrategy } from "@wix/sdk";
 import { collections, products } from "@wix/stores";
 import {cookies} from "next/headers";
-
 
 
 export const wixClientServer = async () => {
@@ -12,8 +11,6 @@ try {
     const cookiesStore = cookies()
     refreshToken = JSON.parse(cookiesStore .get("refreshToken")?.value ||"{}") 
 } catch (e) {}
-
-
 
 const wixClient = createClient({
     modules: {

@@ -3,6 +3,7 @@ import Filter from "@/components/Filter"
 import ProductPage from "@/components/ProductPage"
 import Image from "next/image"
 
+
 const ListPage = () => {
   return (
     <div className='px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 relative'>
@@ -22,7 +23,7 @@ const ListPage = () => {
       <Filter />
       {/*PRODUCTS*/}
       <h1 className="mt-12 text-xl font-semibold">Plain tees</h1>
-      <ProductPage />
+      {/* <ProductPage/> */}
     </div>
   )
 }
