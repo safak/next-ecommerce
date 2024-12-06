@@ -80,8 +80,10 @@ const Filter = () => {
                 >
                     <option>All Filters</option>
                 </select>
+                </div>
 
-                {/* Sort By Dropdown */}
+                <div>
+                    {/* Sort By Dropdown */}
                 <select
                     name="sort"
                     id=""
@@ -99,8 +101,8 @@ const Filter = () => {
                     <option value="asc lastUpdated">Newest</option>
                     <option value="desc lastUpdated">Oldest</option>
                 </select>
-
-            </div>
+                </div>
+                
         </div>
     );
 };

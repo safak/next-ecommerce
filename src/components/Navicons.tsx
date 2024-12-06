@@ -1,62 +1,59 @@
 "use client"
-import { UserCircleIcon } from "@heroicons/react/24/outline"
-import { BellIcon } from "@heroicons/react/24/outline"
-import { ShoppingBagIcon } from "@heroicons/react/24/outline"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
+
+
+import Image from "next/image"
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react"
-import CartModal from "./CartModal"
+import CartModal from "./CartModal";
 
-const Navicons = () => {
-    const [profile, isProfile] = useState(false)
-    const [cart, iscart] = useState(false)
 
-    const router = useRouter()
+const NavIcons = () => {
 
-    const isloggedin = false
+    const [Profile, isProfileOpen] = useState(false);
+    const [Cart, isCartOpen] = useState(false);
+
+    // const router = useRouter();
+
+    // TEMPORARY
+    const isLoggedIn = false;
 
     const handleProfile = () => {
-        if (isloggedin) {
-            router.push("/login")
+        if (!isLoggedIn) {
+            // router.push("/login");
         }
-        isProfile(prev => !prev)
-    }
+        isProfileOpen((prev) => !prev);
+    };
 
-    return (
-        <div className='flex items-center gap-8 xl:gap-5 relative'>
-            <UserCircleIcon
-                className="
-                 w-6
-                 h-6
-                 cursor-pointer"
-                onClick={handleProfile}
-            />
-            {profile && <div className="absolute p-4 rounded-md top-12 left-0 text-sm bg-gray-50 gap-4 z-10">
-                <Link href="/">Profile</Link>
-                <div className="mt-2 cursor-pointer">Log out</div>
-            </div>}
-            <BellIcon
-                className="
-             w-6
-             h-6
-             cursor-pointer"
-            />
 
-            <div className="relative cursor-pointer">
-                <ShoppingBagIcon
-                    className="
-             w-6
-             h-6
-             cursor-pointer"
-                    onClick={() => iscart((prev) => !prev)}
+    return(
+        <div className="flex items-center gap-4 xl:gap-6 relative">
+            <Image src="/profile.png" alt="" width={22} height={22} className="cursor-pointer" onClick={handleProfile}/>
+            {Profile && 
+                <div className="absolute p-4 rounded-md top-12 left-0 text-sm bg-gray-50 shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
+                    <Link href="">Profile</Link>
+                    <div className="mt-2 cursor-pointer">Logout</div>
+                </div>
+            }
+            
+            <Image src="/notification.png" alt="" width={22} height={22} className="cursor-pointer"/>
+
+            <div className=" relative cursor-pointer">
+                <Image 
+                    src="/cart.png" 
+                    alt="" 
+                    width={22} 
+                    height={22}  
+                    onClick={()=> 
+                    isCartOpen((prev) => !prev)}
                 />
-                <div className="absolute -top-4 -right-3 w-6 h-6 bg-lime-400 text-black text-sm rounded-full flex items-center justify-center">1</div>
+                <div className="absolute -top-5 -right-5 w-7 h-7 bg-lime-400 text-black rounded-full flex items-center justify-center" >
+                    3
+                </div>
             </div>
-            {cart && (
-                <CartModal />
-            )}
+            {Cart && <CartModal/>}
         </div>
     )
 }
 
-export default Navicons
+export default NavIcons

@@ -47,7 +47,7 @@ const Slider = () => {
 
     return (
         <div className="h-[calc(100vh-80px)] overflow-hidden">
-            <div className="w-max h-full flex transition-all ease-in-out duration-1000" style={{ transform: `translateX(-${current * 100}vw)` }}>
+            <div className="w-max h-full flex transition-all ease-in-out duration-1000 z-20" style={{ transform: `translateX(-${current * 100}vw)` }}>
                 {slides.map((slide) => (
                     <div
                         className={`${slide.bg} w-screen h-full flex flex-col gap-16 xl:flex-row`}
@@ -68,7 +68,7 @@ const Slider = () => {
                         </div>
 
                         {/* IMAGE CONTAINER */}
-                        <div className="h-1/2 xl:w-1/2 xl:h-full relative">
+                        <div className="h-1/2 xl:w-1/2 xl:h-full relative z-10">
                             <Image
                                 src={slide.img}
                                 alt={slide.title}
@@ -77,6 +77,7 @@ const Slider = () => {
                                 quality={100}
                                 className="object-cover"
                                 priority
+                                
                             />
                         </div>
                     </div>

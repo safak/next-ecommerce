@@ -1,6 +1,7 @@
 
+
 import Filter from "@/components/Filter"
-import ProductPage from "@/components/ProductPage"
+import ProductList from "@/components/ProductList"
 import Image from "next/image"
 
 
@@ -11,7 +12,7 @@ const ListPage = () => {
       <div className="">
         <div className="hidden bg-lime-200 px-4 sm:flex justify-between h-64 rounded-sm">
           <div className="w-2/3 flex flex-col items-center justify-center gap-8">
-            <h1 className="text-4xl font-semibold leading-[48px] text-black">Enjoy discounted prices for <br /> any of the selected product</h1>
+            <h1 className=" text-2xl md:text-3xl lg:text-4xl font-semibold leading-[48px] text-black">Enjoy discounted prices for <br /> any of the selected product</h1>
             <button className="rounded-3xl bg-black text-white hover:bg-lime-400 hover:text-black w-max py-3 px-5 text-sm font-semibold">Buy now</button>
           </div>
           <div className="relative w-1/3">
@@ -23,7 +24,7 @@ const ListPage = () => {
       <Filter />
       {/*PRODUCTS*/}
       <h1 className="mt-12 text-xl font-semibold">Plain tees</h1>
-      {/* <ProductPage/> */}
+      <ProductList/>
     </div>
   )
 }
