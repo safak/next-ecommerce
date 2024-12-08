@@ -17,7 +17,7 @@
     "@wix/sdk": "^1.15.2",
     "@wix/sdk-runtime": "^0.3.19",
     "@wix/stores": "^1.0.297",
-    "isomorphic-dompurify": "^2.16.0",
+    "isomorphic-dompurify": "^2.18.0",
     "js-cookie": "^3.0.5",
     "js-cookies": "^1.0.4",
     "next": "14.2.2",

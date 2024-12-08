@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import NavbarPage from "@/components/Navbar";
 import Footerpage from "@/components/Footer";
+import {WixClientContextProvider} from "@/context/wixContext"
 
 
 
@@ -22,9 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <WixClientContextProvider>
           <NavbarPage/>
             {children}
           <Footerpage/>
+        </WixClientContextProvider>
+          
       </body>
     </html>
   );

@@ -76,8 +76,8 @@ const CartModal = () => {
                     </p>
 
                     <div className="flex justify-between text-sm">
-                        <button className="rounded-md py-3 px-4 ring-1 ring-gray-300">View Cart</button>
-                        <button className="rounded-md py-3 px-4 bg-black text-white">Checkout</button>
+                        <button className="font-semibold rounded-md py-3 px-4 ring-1 ring-gray-300 hover:bg-gray-100">View Cart</button>
+                        <button className="font-semibold rounded-md py-3 px-4 bg-black text-white hover:bg-lime-300 hover:text-black ">Checkout</button>
 
                     </div>
                 </div>
