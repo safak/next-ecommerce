@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/Footer";
+import Header from "@/components/Header";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Lama Dev E-Commerce Application",
-  description: "A complete e-commerce application with Next.js and Wix",
+  title: "Trendy Fashion for Every Season",
+  description: "Welcome to Head$Toes, where fashion meets individuality. We offer the latest in trend-driven styles for those who want to stand out. From casual basics to bold statement pieces, our collections are designed to keep you looking fresh and feeling confident. Discover your next favorite outfit today!"
 };
 
 export default function RootLayout({
@@ -16,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }
