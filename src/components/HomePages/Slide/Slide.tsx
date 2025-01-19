@@ -9,7 +9,7 @@ const Slide: React.FC = () => {
           <h1 className="text-white text-3xl text-start font-semibold mt-4 sm:text-3xl md:text-4xl md:leading-tight">
             Look Good With Little Effort
           </h1>
-          <p className="text-white w-[350px] md:text-start mt-4 text-lg text-center md:w-[60%]">
+          <p className="text-white w-[350px] text-start mt-4 text-lg  md:w-[60%]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
             deserunt nesciunt, recusandae accusantium corrupti eius aut,
             quibusdam molestias rerum dolor, similique ducimus quas inventore
